@@ -6,6 +6,7 @@ target 'FBNetwork' do
   use_frameworks!
 
   # Pods for FBNetwork
+  pod 'FBModel', :git => 'https://github.com/Felip38rito/FBModel.git', :tag => '0.0.10'
 
   target 'FBNetworkTests' do
     # Pods for testing

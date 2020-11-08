@@ -3,15 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		87C8A6AB220F5B799DF5DD1E /* Pods_FBNetwork_FBNetworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BDAA55C44E88F389249B74 /* Pods_FBNetwork_FBNetworkTests.framework */; };
 		C1109A011CC168DE0565E1AF /* Pods_FBNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C32829E7A2350EF3301B9F /* Pods_FBNetwork.framework */; };
 		FAB78AFC2556717B00A9C5BD /* FBNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB78AF22556717A00A9C5BD /* FBNetwork.framework */; };
-		FAB78B012556717B00A9C5BD /* FBNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78B002556717B00A9C5BD /* FBNetworkTests.swift */; };
 		FAB78B032556717B00A9C5BD /* FBNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = FAB78AF52556717A00A9C5BD /* FBNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAB78B1C255674F400A9C5BD /* FBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78B1B255674F400A9C5BD /* FBNetwork.swift */; };
+		FAB78B342558B00A00A9C5BD /* FBNetworkParserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78B332558B00A00A9C5BD /* FBNetworkParserSpec.swift */; };
+		FAB78B3B2558B93D00A9C5BD /* URLParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78B3A2558B93D00A9C5BD /* URLParameter.swift */; };
+		FAB78B432558B98C00A9C5BD /* JSONParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78B422558B98C00A9C5BD /* JSONParameter.swift */; };
+		FAB78B472558B9C500A9C5BD /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78B462558B9C500A9C5BD /* Parameter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +39,12 @@
 		FAB78AF52556717A00A9C5BD /* FBNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBNetwork.h; sourceTree = "<group>"; };
 		FAB78AF62556717A00A9C5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAB78AFB2556717B00A9C5BD /* FBNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAB78B002556717B00A9C5BD /* FBNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNetworkTests.swift; sourceTree = "<group>"; };
 		FAB78B022556717B00A9C5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB78B1B255674F400A9C5BD /* FBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNetwork.swift; sourceTree = "<group>"; };
+		FAB78B332558B00A00A9C5BD /* FBNetworkParserSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNetworkParserSpec.swift; sourceTree = "<group>"; };
+		FAB78B3A2558B93D00A9C5BD /* URLParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameter.swift; sourceTree = "<group>"; };
+		FAB78B422558B98C00A9C5BD /* JSONParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameter.swift; sourceTree = "<group>"; };
+		FAB78B462558B9C500A9C5BD /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +85,6 @@
 				B218F62A2DB3BC305F35862C /* Pods-FBNetwork-FBNetworkTests.debug.xcconfig */,
 				955AA3535F00A90BADAA1540 /* Pods-FBNetwork-FBNetworkTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,8 +111,10 @@
 		FAB78AF42556717A00A9C5BD /* FBNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				FAB78B392558B92100A9C5BD /* Encoders */,
 				FAB78AF52556717A00A9C5BD /* FBNetwork.h */,
 				FAB78AF62556717A00A9C5BD /* Info.plist */,
+				FAB78B1B255674F400A9C5BD /* FBNetwork.swift */,
 			);
 			path = FBNetwork;
 			sourceTree = "<group>";
@@ -113,10 +122,20 @@
 		FAB78AFF2556717B00A9C5BD /* FBNetworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				FAB78B002556717B00A9C5BD /* FBNetworkTests.swift */,
 				FAB78B022556717B00A9C5BD /* Info.plist */,
+				FAB78B332558B00A00A9C5BD /* FBNetworkParserSpec.swift */,
 			);
 			path = FBNetworkTests;
+			sourceTree = "<group>";
+		};
+		FAB78B392558B92100A9C5BD /* Encoders */ = {
+			isa = PBXGroup;
+			children = (
+				FAB78B3A2558B93D00A9C5BD /* URLParameter.swift */,
+				FAB78B422558B98C00A9C5BD /* JSONParameter.swift */,
+				FAB78B462558B9C500A9C5BD /* Parameter.swift */,
+			);
+			path = Encoders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +202,7 @@
 				TargetAttributes = {
 					FAB78AF12556717A00A9C5BD = {
 						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1210;
 					};
 					FAB78AFA2556717B00A9C5BD = {
 						CreatedOnToolsVersion = 12.1;
@@ -294,6 +314,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB78B1C255674F400A9C5BD /* FBNetwork.swift in Sources */,
+				FAB78B432558B98C00A9C5BD /* JSONParameter.swift in Sources */,
+				FAB78B3B2558B93D00A9C5BD /* URLParameter.swift in Sources */,
+				FAB78B472558B9C500A9C5BD /* Parameter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB78B012556717B00A9C5BD /* FBNetworkTests.swift in Sources */,
+				FAB78B342558B00A00A9C5BD /* FBNetworkParserSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 88401C6E4DA2855B374C3E97 /* Pods-FBNetwork.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9V2UBM64QJ;
@@ -458,6 +483,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.felip38rito.FBNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -467,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0B901C31C0B94B81A58AB36 /* Pods-FBNetwork.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9V2UBM64QJ;
@@ -492,6 +519,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B218F62A2DB3BC305F35862C /* Pods-FBNetwork-FBNetworkTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9V2UBM64QJ;
 				INFOPLIST_FILE = FBNetworkTests/Info.plist;
@@ -511,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 955AA3535F00A90BADAA1540 /* Pods-FBNetwork-FBNetworkTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9V2UBM64QJ;
 				INFOPLIST_FILE = FBNetworkTests/Info.plist;
